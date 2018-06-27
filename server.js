@@ -19,10 +19,10 @@ var port = process.env.PORT || 8080;
 
 // routes for the API
 //Characters
-app.use('/api/characters', api.character);
+app.use('/characters', api.character);
 
 //Sorting Hat
-app.use('/api/sortinghat', api.sortingHat);
+app.use('/sortinghat', api.sortingHat);
 //start the server
 
 app.listen(port);
