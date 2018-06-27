@@ -4,7 +4,7 @@ var app = express();
 var api = require('./api/index.js');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-mongoose.createConnection('mongodb://localhost/api');
+mongoose.createConnection('mongodb://localhost');
 
 var Character = require('./api/models/character');
 
