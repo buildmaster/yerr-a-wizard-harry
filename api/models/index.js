@@ -1,7 +1,8 @@
 'use strict';
 
 let mongoose = require('mongoose');
-mongoose.createConnection('mongodb://localhost/api');
+let mongoDB = process.env.MONGODB_URI || 'mongodb://localhost/api';
+mongoose.createConnection(mongoDB);
 
 module.exports = {
 	character: require('./character.js')
