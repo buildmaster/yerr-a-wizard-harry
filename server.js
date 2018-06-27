@@ -5,7 +5,6 @@ var api = require('./api/index.js');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var mongoDB = process.env.MONGODB_URI || 'mongodb://localhost/api';
-mongoose.createConnection(mongoDB);
 
 var Character = require('./api/models/character');
 
@@ -30,4 +29,8 @@ app.use('/api/sortinghat', api.sortingHat);
 //start the server
 
 app.listen(port);
+mongoose.connect(mongoDB, ()=>{
+	console.log('server connected')
+});
+
 console.log('wingardium leviosa')
