@@ -4,22 +4,23 @@ let mongoose = require('mongoose');
 let Schema = mongoose.Schema;
 
 let CharacterSchema = new Schema({
-	firstName: String,
-	lastName: String,
+	firstName: {type: String, required: true},
+	lastName: {type: String, required: true},
 	birthday: String,
-	organizations: [],
 	house: String,
 	school: String,
-	lineage: String,
+	blood: {type: String, enum: ['pure-blood', 'half-blood', 'muggle-born', 'unknown']},
 	alias: String,
-	wand: [],
-	items: [], 
+	wand: [{type: String}],
 	pet: [{
 		name: String,
 		species: String
 	}], 
-	skills: String,
-	deathEater: Boolean
+	boggart: String,
+	deathEater: Boolean,
+	dumbledoresArmy: Boolean,
+	orderOfThePhoenix: Boolean,
+	ministryOfMagic: Boolean,
 });
 
 module.exports = mongoose.model('Character', CharacterSchema);
