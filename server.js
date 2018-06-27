@@ -6,9 +6,6 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var mongoDB = process.env.MONGODB_URI || 'mongodb://localhost/api';
 mongoose.createConnection(mongoDB);
-mongoose.Promise = global.Promise;
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 var Character = require('./api/models/character');
 
