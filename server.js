@@ -5,7 +5,7 @@ var api = require('./api/index.js');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var mongoDB = process.env.MONGODB_URI || 'mongodb://localhost/api';
-mongoose.createConnection(mongoDB);
+mongoose.connect(mongoDB);
 
 var Character = require('./api/models/character');
 
