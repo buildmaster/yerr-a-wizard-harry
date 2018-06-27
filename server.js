@@ -22,6 +22,9 @@ var port = process.env.PORT || 8080;
 app.use('/api/characters', api.character);
 
 //Sorting Hat
+app.use('/api/houses', api.houses);
+
+//Sorting Hat
 app.use('/api/sortinghat', api.sortingHat);
 //start the server
 
