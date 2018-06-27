@@ -11,11 +11,6 @@ let CharacterSchema = new Schema({
 	house: String,
 	school: String,
 	lineage: String,
-	appearances: [{
-		title: String,
-		book_no: Number,
-		url: String 
-	}],
 	alias: String,
 	wand: [],
 	items: [], 

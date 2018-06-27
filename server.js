@@ -4,7 +4,7 @@ var app = express();
 var api = require('./api/index.js');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-mongoose.createConnection('mongodb://localhost');
+mongoose.createConnection('mongodb://localhost/api');
 
 var Character = require('./api/models/character');
 
@@ -19,10 +19,10 @@ var port = process.env.PORT || 8080;
 
 // routes for the API
 //Characters
-app.use('/characters', api.character);
+app.use('/api/characters', api.character);
 
 //Sorting Hat
-app.use('/sortinghat', api.sortingHat);
+app.use('/api/sortinghat', api.sortingHat);
 //start the server
 
 app.listen(port);
