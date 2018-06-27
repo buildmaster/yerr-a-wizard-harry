@@ -7,7 +7,7 @@ let router = express.Router();
 router.post('/', (req, res) =>{
 	let model = req.body;
 	let character = new models.character(model);      
-	
+	console.log(character);
 	character.save(function(err) {
 	    if (err)
 	        res.send(err + ' error saving character!');
