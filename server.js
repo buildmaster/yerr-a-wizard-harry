@@ -30,9 +30,9 @@ app.use('/api/sortinghat', api.sortingHat);
 
 app.listen(port);
 mongoose.connect(mongoDB).then(()=>{
-	
+
 	console.log('server connected');
-}).catch(err)=>{
+}).catch((err)=>{
 	
 		console.error(err);
 
