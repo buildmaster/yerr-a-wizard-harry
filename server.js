@@ -29,7 +29,7 @@ app.use('/api/sortinghat', api.sortingHat);
 //start the server
 
 app.listen(port);
-mongoose.connect(mongoDB, {}, (err)=>{
+mongoose.connect(mongoDB, {connectTimeoutMS:1000}, (err)=>{
 	if(err)
 	{
 		console.error(err);
