@@ -29,6 +29,7 @@ app.use('/api/sortinghat', api.sortingHat);
 
 app.listen(port);
 let connection = api.mongoose.createConnection();
+console.log({mongoDB});
 connection.open(mongoDB, (err)=>{
 	if(err)
 	{
