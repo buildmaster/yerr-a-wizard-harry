@@ -3,7 +3,6 @@ var express = require('express');
 var app = express();
 var api = require('./api/index.js');
 var bodyParser = require('body-parser');
-var mongoose = require('mongoose');
 var mongoDB = process.env.MONGODB_URI || 'mongodb://localhost/api';
 
 var Character = require('./api/models/character');
@@ -29,7 +28,8 @@ app.use('/api/sortinghat', api.sortingHat);
 //start the server
 
 app.listen(port);
-mongoose.connect(mongoDB, {connectTimeoutMS:1000}, (err)=>{
+let connection = api.mongoose.createConnection();
+connection.open(mongoDB, (err)=>{
 	if(err)
 	{
 		console.error(err);
