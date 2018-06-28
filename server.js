@@ -29,14 +29,13 @@ app.use('/api/sortinghat', api.sortingHat);
 //start the server
 
 app.listen(port);
-mongoose.connect(mongoDB, (err)=>{
-	if(err)
-	{
-		console.error(err);
-	}
-	else {
+mongoose.connect(mongoDB).then(()=>{
+	
 	console.log('server connected');
-}
+}).catch(err)=>{
+	
+		console.error(err);
+
 });
 
 console.log('wingardium leviosa')
